@@ -867,7 +867,8 @@ class BaseLibrary {
 				case "d|Y": data.y = values;
 				case "d|Z": data.z = values;
 				default:
-					throw "Unsupported key name "+cname;
+					trace('WARN: Unsupported key name $cname');
+					// throw "Unsupported key name "+cname;
 				}
 			}
 
@@ -876,6 +877,11 @@ class BaseLibrary {
 			//	throw "Unsynchronized curve components on " + model.getName()+"."+cname+" (" + data.x.length + "/" + data.y.length + "/" + data.z.length + ")";
 			// optimize empty animations out
 			var M = 1.0;
+			if (StringTools.endsWith(cname, "AnimCurveNode"))
+			{
+				cname = cname.substr(0, cname.length - 15);
+				// trace(cname.length, cname, cname.charCodeAt(1));
+			}
 			var def = switch( cname ) {
 			case "T":
 				if( c.def.trans == null ) P0 else c.def.trans;
@@ -894,8 +900,11 @@ class BaseLibrary {
 			case "S":
 				if( c.def.scale == null ) P1 else c.def.scale;
 			default:
-				throw "Unknown curve " + model.getName()+"."+cname;
+				trace('WARN: Unsupported curve model "${model.getName()}"  Curve: "$cname"');
+				// throw "Unknown curve " + model.getName()+"."+cname;
+				null;
 			}
+			if (def == null) continue;
 			var hasValue = false;
 			if( data.x != null && roundValues(data.x, def.x, M) )
 				hasValue = true;

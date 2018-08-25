@@ -54,7 +54,7 @@ class Engine {
 	@:allow(hxd.res) var resCache = new Map<{},Dynamic>();
 
 	@:access(hxd.Stage)
-	public function new( hardware = true, aa = 0 ) {
+	public function new( hardware = true, aa = 10) {
 		this.hardware = hardware;
 		this.antiAlias = aa;
 		this.autoResize = true;
