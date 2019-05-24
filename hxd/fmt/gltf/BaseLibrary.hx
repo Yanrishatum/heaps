@@ -8,9 +8,9 @@ class BaseLibrary {
 	
 	public var fileName:String;
 	public var root:Gltf;
-	public var buffers:Array<Bytes>;
+	public var buffers:Map<String, Bytes>;
 
-	public function new( fileName:String, root:Gltf, buffers:Array<Bytes> ) {
+	public function new( fileName:String, root:Gltf, buffers:Map<String, Bytes> ) {
 
 		this.fileName = fileName;
 		this.root = root;
@@ -102,6 +102,7 @@ class BaseLibrary {
 		Mat3 => 9,
 		Mat4 => 16
 	];
+
 	static final ATTRIBUTE_OFFSETS:Map<String, Int> = [
 		"POSITION" => 0,
 		"NORMAL" => 3,
@@ -109,6 +110,8 @@ class BaseLibrary {
 		// "TANGENT" => 8,
 		// "TEXCOORD_1" =>
 	];
+
+	@:access(h3d.prim.MeshPrimitive)
 	function loadPrimitive( prim : MeshPrimitive, loadTexture : String->h3d.mat.Texture ) {
 		if (prim.mode == null) prim.mode = Triangles;
 		// TODO: Modes other than triangles?
@@ -117,32 +120,49 @@ class BaseLibrary {
 		var stride:Int = 0;
 		var vcount:Int = -1;
 		var attrs = prim.attributes.keys();
-		var accessors:Array<Accessor>;
-		for (attr in attrs) {
+
+		var baseFlags : Array<h3d.Buffer.BufferFlag> = [RawFormat];
+		if (prim.indices == null) throw "Primitives without indexes are not supported!"; // TODO
+
+		for ( attr in attrs ) {
 			var accessor = root.accessors[prim.attributes.get(attr)];
-			accessors.push(accessor);
+			// TODO: Sparce accessor, non-float accessors
 			if (accessor.sparce != null) throw "Sparse accessors not supported!";
 			if (accessor.componentType != CTFloat) throw "Primitive attributes should be of type Float!";
-			if (vcount == -1) vcount = accessor.count;
-			else if (vcount != accessor.count) throw "Vertex data count mismatch!";
-			stride += STRIDES[accessor.type];
+			var view = root.bufferViews[accessor.bufferView];
+			var buf = root.buffers[view.buffer];
+			var bytes = buffers[buf.uri];
+			var attrBuf = new h3d.Buffer(accessor.count, view.byteStride >> 2, baseFlags);
+			// mprim.addBuffer("123", accessor.byteOffset)
+			// attrBuf.uploadBytes(buffers[buf.uri], accessor.byteOffset)
 		}
-		var extras = 8;
-		var vbuf = new hxd.FloatBuffer(vcount * stride);
-		for (i in 0...attrs.length)
-		{
-			var offset = ATTRIBUTE_OFFSETS[attrs[i]];
-			var accessor = accessors[i];
-			var size = STRIDES[accessor.type];
-			if ( offset == null ) {
-				offset = extras;
-				extras += size;
-			}
-			for (k in 0...vcount)
-			{
+
+		// var accessors:Array<Accessor>;
+		// for (attr in attrs) {
+		// 	var accessor = root.accessors[prim.attributes.get(attr)];
+		// 	accessors.push(accessor);
+		// 	if (accessor.sparce != null) throw "Sparse accessors not supported!";
+		// 	if (accessor.componentType != CTFloat) throw "Primitive attributes should be of type Float!";
+		// 	if (vcount == -1) vcount = accessor.count;
+		// 	else if (vcount != accessor.count) throw "Vertex data count mismatch!";
+		// 	stride += STRIDES[accessor.type];
+		// }
+		// var stride = 8;
+		
+		// for (i in 0...attrs.length)
+		// {
+		// 	var offset = ATTRIBUTE_OFFSETS[attrs[i]];
+		// 	var accessor = accessors[i];
+		// 	var size = STRIDES[accessor.type];
+		// 	if ( offset == null ) {
+		// 		offset = stride;
+		// 		stride += size;
+		// 	}
+		// 	for (k in 0...vcount)
+		// 	{
 				
-			}
-		}
+		// 	}
+		// }
 		// var idxAcc = root.accessors[prim.indices]
 	}
 
@@ -151,8 +171,16 @@ class BaseLibrary {
 		if (node == null) return null;
 		// TODO: Multiple primitives
 		if (node.primitives.length != 1) throw "Only one primitive allowed per mesh!";
-		var prim = node.primitives[0];
+
+		var materials:Map<GltfId, h3d.mat.Material> = new Map();
+		var geom = new Geometry(this, node);
+		for ( prim in node.primitives ) {
+			if ( materials.get(prim.material) == null ) {
+				materials.set(prim.material, loadMaterial(prim.material, loadTexture));
+			}
+		}
 		
+
 		return null;
 	}
 

@@ -265,7 +265,7 @@ enum abstract MaterialAlphaMode(String) {
 typedef MeshPrimitive = {
 	>GltfProperty,
 	var attributes:GltfAccessor<GltfId>;
-	@:optional var indices:Array<GltfId>;
+	@:optional var indices:GltfId;
 	@:optional var material:GltfId;
 	@:optional var mode:MeshPrimitiveMode;
 	@:optional var targets:Array<MeshPrimitiveTarget>;
