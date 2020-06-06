@@ -229,12 +229,14 @@ class BaseLibrary {
 		// TODO : axisFlip
 
 		var app = "";
+		var version = "";
 		for( p in root.getAll("FBXHeaderExtension.SceneInfo.Properties70.P") )
 			switch( p.props[0].toString() ) {
 			case "LastSaved|ApplicationName": app = p.props[4].toString();
+			case "LastSaved|ApplicationVersion": version = p.props[4].toString();
 			default:
 			}
-		if( app.indexOf("Blender") >= 0 && unitScale == 1 && originScale == 1 )
+		if( app.indexOf("Blender") >= 0 && Std.parseFloat(version.substr(0, 4)) < 2.79 && unitScale == 1 && originScale == 1 )
 			scaleFactor *= 0.01; // Blender in meters exports FBX to centimeter
 
 		if( scaleFactor == 1 && geometryScaleFactor == 1 )
