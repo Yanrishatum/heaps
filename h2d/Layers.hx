@@ -1,7 +1,7 @@
 package h2d;
 
 /**
- * `h2d.Layers` allows to hierarchically organize objects on different layers and supports Y-sorting.
+ * Hierarchically organize objects on different layers and supports Y-sorting.
  */
 class Layers extends Object {
 

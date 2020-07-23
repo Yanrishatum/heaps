@@ -2,7 +2,7 @@ package h2d.col;
 import hxd.Math;
 
 /**
-	`h2d.col.Point` is simple 2D position container.
+	Simple 2D position container.
 **/
 class Point {
 

@@ -18,7 +18,7 @@ enum LineHeightMode {
 }
 
 /**
-	`h2d.HtmlText` is a simple HTML text renderer.
+	Simple HTML text renderer.
 	See Text section of the manual for more details and list of supported HTML tags.
 **/
 class HtmlText extends Text {

@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.Bitmap` is used to display a single bitmap Tile on the screen.
+	Display a single bitmap Tile on the screen.
 **/
 class Bitmap extends Drawable {
 

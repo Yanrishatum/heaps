@@ -133,7 +133,7 @@ private class GraphicsContent extends h3d.prim.Primitive {
 }
 
 /**
-	`h2d.Graphics` provide simple interface to draw arbitrary geometry.
+	Simple interface to draw arbitrary geometry.
 
 	Usage notes:
 	* When rendering Tiles, there is a limitation of only one unique Texture per Graphics instance.

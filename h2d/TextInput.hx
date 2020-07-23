@@ -4,7 +4,7 @@ import hxd.Key in K;
 private typedef TextHistoryElement = { t : String, c : Int, sel : { start : Int, length : Int } };
 
 /**
-	`h2d.TextInput` is a skinnable text input handler.
+	Skinnable text input handler.
 **/
 class TextInput extends Text {
 

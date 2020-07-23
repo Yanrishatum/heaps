@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.Mask` allows to restrict rendering area within `[width, height]` rectangle.
+	Restrict rendering area within `[width, height]` rectangle.
 	For more advanced masking, see `h2d.filter.AbstractMask`.
 **/
 class Mask extends Object {

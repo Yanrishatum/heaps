@@ -31,7 +31,7 @@ private class Fake extends Object {
 }
 
 /**
-	`h2d.Dropdown` is a simple UI component that creates an interactive drop-down list.
+	Simple UI component that creates an interactive drop-down list.
 	Dropdown will add an `h2d.Flow` to `Scene` when opening in order to be visible above other objects. See `dropdownLayer`.  
 	Note that when `dropdownList` opens and closes, item objects will receive the `onHierarchyChanged` callback.
 **/

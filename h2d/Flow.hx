@@ -84,7 +84,7 @@ class FlowProperties {
 }
 
 /**
-	`h2d.Flow` provides an automatic layout system.
+	Automatic layout system.
 **/
 class Flow extends Object {
 

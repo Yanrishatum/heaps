@@ -129,7 +129,7 @@ class BatchElement {
 }
 
 /**
-	`h2d.SpriteBatch.BasicElement` is a BatchElement that provides simple simulation of velocity, friction and gravity.
+	BatchElement that provides simple simulation of velocity, friction and gravity.
 	Parent BatchElement should have `hasUpdate` set to true in order for element to work properly.
 **/
 class BasicElement extends BatchElement {

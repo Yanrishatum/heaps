@@ -1,7 +1,7 @@
 package h2d.col;
 import hxd.Math;
 /**
-	`h2d.col.Bounds` represent a 2D bounding box often used for determining Object bounding area.
+	2D bounding box often used for determining Object bounding area.
 
 	Bounds holds min/max coordinates of bounding box instead of it's position and size.
 **/

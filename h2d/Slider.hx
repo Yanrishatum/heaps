@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.Silder` is a simple interactive horizontal numerical slider.
+	Simple interactive horizontal numerical slider.
 **/
 class Slider extends h2d.Interactive {
 	/**

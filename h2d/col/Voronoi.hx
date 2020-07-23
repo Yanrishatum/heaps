@@ -567,7 +567,7 @@ private class CircleEvent extends RBNode<CircleEvent> {
 }
 
 /**
-	`h2d.col.Voronoi` allows to Steven Fortune's algorithm to compute Voronoi diagram from given set of Points and bounding box.
+	Steven Fortune's algorithm to compute Voronoi diagram from given set of Points and bounding box.
 	The implementation is a port from JS library: https://github.com/gorhill/Javascript-Voronoi
 **/
 class Voronoi {

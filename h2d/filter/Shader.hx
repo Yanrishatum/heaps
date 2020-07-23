@@ -1,7 +1,7 @@
 package h2d.filter;
 
 /**
-	Shader filter allows to easily implement custom filters without need to fiddle with render passes.
+	Easily implement custom filters without need to fiddle with render passes.
 
 	Compatible shaders should extend from `h3d.shader.ScreenShader` and contain an input texture uniform, as well as assign `pixelColor` in fragment shader.
 

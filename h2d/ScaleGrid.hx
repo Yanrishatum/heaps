@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.ScaleGrid` provides simple 9-slice bitmap renderer.
+	Simple 9-slice bitmap renderer.
 **/
 class ScaleGrid extends h2d.TileGroup {
 

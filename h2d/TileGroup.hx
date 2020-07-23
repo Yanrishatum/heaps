@@ -495,7 +495,7 @@ class TileLayerContent extends h3d.prim.Primitive {
 }
 
 /**
-	`h2d.TileGroup` is a static Tile batch renderer.
+	Static Tile batch renderer.
 	It's limited to one unique texture, but allows to render all Tiles in single drawcall.
 
 	TileGroup follows upload-once policy and does not allow modification of the already added geometry.

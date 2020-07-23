@@ -23,7 +23,7 @@ private class MaskShader extends h3d.shader.ScreenShader {
 }
 
 /**
-	Allows to perform arbitrary shape masking of the filtered Object.
+	Perform arbitrary shape masking of the filtered Object.
 **/
 class Mask extends AbstractMask {
 

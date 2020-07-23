@@ -1,7 +1,7 @@
 package h2d.filter;
 
 /**
-	Provies a solid color outline to the filtered object by utilizing `h3d.pass.Outline` render pass.
+	Solid color outline to the filtered object by utilizing `h3d.pass.Outline` render pass.
 **/
 class Outline extends Filter {
 	/**

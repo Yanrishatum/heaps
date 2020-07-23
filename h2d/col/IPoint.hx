@@ -2,7 +2,7 @@ package h2d.col;
 import hxd.Math;
 
 /**
-	`h2d.col.IPoint` is an `Int`-based version of `h2d.col.Point`.
+	`Int`-based version of `h2d.col.Point`.
 **/
 class IPoint {
 

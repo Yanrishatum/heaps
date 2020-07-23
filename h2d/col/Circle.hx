@@ -2,7 +2,7 @@ package h2d.col;
 import hxd.Math;
 
 /**
-	`h2d.col.Circle` provides an implementation for `Collider` interfaces with circular hitbox.
+	Implementation for `Collider` interfaces with circular hitbox.
 **/
 class Circle implements Collider {
 

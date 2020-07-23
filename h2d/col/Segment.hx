@@ -2,7 +2,7 @@ package h2d.col;
 import hxd.Math;
 
 /**
-	`h2d.col.Segment` is a 2D line segment.
+	2D line segment.
 **/
 class Segment {
 

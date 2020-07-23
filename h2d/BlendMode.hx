@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	BlendMode dictates the blending rule when rendering Tile/Material.
+	Dictates the blending rule when rendering Tile/Material.
 **/
 enum BlendMode {
 	/**

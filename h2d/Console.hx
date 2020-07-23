@@ -24,7 +24,7 @@ typedef ConsoleArgDesc = {
 }
 
 /**
-	`h2d.Console` provides simple debug console integration.
+	Simple debug console integration.
 
 	By default comes with 2 commands: `help` and `cls`, which print help message
 	describing all command and clear the screen respectively.

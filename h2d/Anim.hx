@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.Anim` is used to display an animated sequence of bitmap tiles on the screen.
+	Display an animated sequence of bitmap tiles on the screen.
 **/
 class Anim extends Drawable {
 

@@ -3,7 +3,7 @@ package h2d;
 private typedef RenderZoneStack = { hasRZ:Bool, x:Float, y:Float, w:Float, h:Float };
 
 /**
-	`h2d.RenderContext` provides 2D scene rendering capabilities.
+	2D scene rendering capabilities.
 **/
 class RenderContext extends h3d.impl.RenderContext {
 

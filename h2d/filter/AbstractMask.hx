@@ -21,7 +21,7 @@ class Hide extends Filter {
 }
 
 /**
-	AbstractMask is a base class for filters that utilize separate Objects as a masking object.
+	Base class for filters that utilize separate Objects as a masking object.
 	Not intended to be used directly.
 **/
 class AbstractMask extends Filter {

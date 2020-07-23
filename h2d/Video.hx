@@ -24,7 +24,7 @@ private abstract VideoImpl(hl.Abstract<"hl_video">) {
 #end
 
 /**
-	`h2d.Video` allows playback of video files, however each target platform have it's own limitations.
+	Playback of video files, however each target platform have it's own limitations.
 	For hashlink it depends on `video` library (at the time of HL 1.11 it's not bundled and have to be [compiled manually](https://github.com/HaxeFoundation/hashlink/tree/master/libs/video) with FFMPEG)
 	For JS it will use HTML Video element and will be restricted by content-security policy and browser decoder capabilities.
 **/

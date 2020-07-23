@@ -61,7 +61,7 @@ enum Align {
 }
 
 /**
-	`h2d.Text` is basic text renderer with multiline support.
+	Basic text renderer with multiline support.
 	See Text section of the manual for more details.
 **/
 class Text extends Drawable {

@@ -1,7 +1,7 @@
 package h2d.col;
 
 /**
-	`h2d.col.Line` represents a line segment between two Points. 
+	Line segment between two Points. 
 **/
 class Line {
 

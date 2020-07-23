@@ -68,7 +68,7 @@ enum ScaleMode {
 }
 
 /**
-	h2d.Scene is the root class for a 2D scene. All root objects are added to it before being drawn on screen.
+	Root class for a 2D scene. All root objects are added to it before being drawn on screen.
 **/
 class Scene extends Layers implements h3d.IDrawable implements hxd.SceneEvents.InteractiveScene {
 

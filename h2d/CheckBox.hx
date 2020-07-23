@@ -1,7 +1,7 @@
 package h2d;
 
 /**
-	`h2d.CheckBox` is a simple UI toggle component.
+	Simple UI toggle component.
 **/
 class CheckBox extends h2d.Flow {
 	/**
